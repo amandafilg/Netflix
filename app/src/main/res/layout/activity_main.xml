@@ -8,6 +8,16 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageViewCapa"
+        android:layout_width="410dp"
+        android:layout_height="234dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/capa" />
+
+    <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="43dp"
         android:layout_height="60dp"
@@ -23,7 +33,7 @@
         android:id="@+id/textViewFilme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Filmes"
+        android:text="@string/filmes"
         android:textColor="@color/menunavegacao"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewSerie"
@@ -36,7 +46,7 @@
         android:id="@+id/textViewMinhaLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Minha Lista"
+        android:text="@string/minha_lista"
         android:textColor="@color/menunavegacao"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewFilme"
@@ -49,7 +59,7 @@
         android:id="@+id/textViewSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Série"
+        android:text="@string/s_rie"
         android:textColor="@color/menunavegacao"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/imageViewLogo"
@@ -58,30 +68,178 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
         app:layout_constraintTop_toTopOf="@+id/imageViewLogo" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.22"
-        />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.45" />
-
     <ImageView
         android:id="@+id/imageViewSoundofHope"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/logomovie"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:layout_constraintBottom_toBottomOf="@+id/guideline2"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="86dp" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineSuperiorHorizontal"
+        app:srcCompat="@drawable/logomovie" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSuperiorHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10123119" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineInferiorHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <TextView
+        android:id="@+id/textViewRomance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Romance"
+        android:textColor="@color/menunavegacao"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDrama"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDrama"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guidelineEsquerda"
+        app:layout_constraintTop_toTopOf="@+id/textViewDrama" />
+
+    <TextView
+        android:id="@+id/textViewDrama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Drama"
+        android:textColor="@color/menunavegacao"
+        app:layout_constraintEnd_toStartOf="@+id/textViewComedia"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewRomance"
+        app:layout_constraintTop_toTopOf="@+id/guidelineInferiorHorizontal" />
+
+    <TextView
+        android:id="@+id/textViewComedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comédia"
+        android:textColor="@color/menunavegacao"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDrama"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDireita"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewDrama"
+        app:layout_constraintTop_toTopOf="@+id/textViewDrama" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEsquerda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDireita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="113dp"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <Button
+        android:id="@+id/btAssistir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:drawableLeft="@drawable/ic_executar"
+        android:text="Assistir"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDetalhes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btMinhaLista"
+        app:layout_constraintTop_toBottomOf="@id/textViewDrama"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <Button
+        android:id="@+id/btMinhaLista"
+        android:layout_width="116dp"
+        android:layout_height="62dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_adicionar"
+        android:text="MINHA LISTA"
+        android:textSize="10sp"
+        app:iconSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btAssistir"
+        app:layout_constraintEnd_toStartOf="@+id/btAssistir"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guidelineEsquerda"
+        app:layout_constraintTop_toTopOf="@+id/btAssistir" />
+
+    <Button
+        android:id="@+id/buttonDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_informacao"
+        android:padding="0dp"
+        android:text="DETALHES"
+        app:iconSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btAssistir"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDireita"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btAssistir"
+        app:layout_constraintTop_toTopOf="@+id/btAssistir" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Lançamento"
+        android:textColor="@color/menunavegacao"
+        app:layout_constraintStart_toStartOf="@+id/guidelineEsquerda"
+        app:layout_constraintTop_toBottomOf="@+id/btAssistir" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="85dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guidelineEsquerda"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/f1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="85dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/f3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="85dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDireita"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:srcCompat="@drawable/f6" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Amanda Carvalho Filgueiras"
+        android:textColor="@color/menunavegacao"
+        app:layout_constraintStart_toStartOf="@+id/guidelineEsquerda"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
